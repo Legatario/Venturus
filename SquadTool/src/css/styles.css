@@ -167,9 +167,8 @@ footer{
 
 .container-team{
     border: 2px solid #FFF;
-    padding: 30px 20px;
+    padding: 20px 20px;
     box-shadow: 0 5px 10px;
-    margin-left: 20px;
     background-color: #FFF;
     border-radius: 20px;
     width: 95%;
@@ -391,3 +390,50 @@ textarea {
     display: flex;
 }
 
+/* Style das tags */
+
+.textarea{
+    width: 99%;
+    margin-top: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.568);
+    height: 95px;
+    border-radius: 3px;
+    overflow-y: scroll;
+    
+
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.tag-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag-container .tag{
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    border: 5px;
+    background: rgb(201, 31, 31);
+    color: #FFF;
+    border-radius: 10px;
+    padding: 3px;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+.tag i{
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.tag-container input{
+    flex: 1;
+    outline: none;
+    border: 0;
+}
