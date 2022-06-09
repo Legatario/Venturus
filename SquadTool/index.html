@@ -9,10 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <!-- Resetes -->
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <!-- JQuery-ui -->
+    <link rel="stylesheet" href="./src/jquery-ui/jquery-ui.min.css">
     <!-- Styles -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
     <title>Venturus Tool Team</title>
+
 </head>
 <body>
 
@@ -26,27 +29,83 @@
             <i class="fa-solid fa-circle-user"></i>
         </div>
     </header>
-
+    <main></main>
     <section>
-        <div class="container">
-            <div class="new-task-container">
-                <input type="text" class="new-task-input" placeholder="Tarefa para ser feita">
-
-                <button class="new-task-button">+</button>
-  
+        <main>
+            <div class="container">
+                <div class="new-task-container">
+                    <input type="text" class="new-task-input" placeholder="Tarefa para ser feita">
+    
+                    <button class="new-task-button">+</button>
+      
+                </div>
+                <div class="new-task-header">
+                        <label>Name</label>
+                </div> 
+                    <div class="tasks-container"></div>
+                
             </div>
+        </main>
+        
+        <article>
+            <div class="container3">
+                <div class="article-header">
+                    <h1>Top 5</h1>
+                </div>
+                <div class="topest">
+                    <label>Highest avg age</label>
+                    <div class="highest">
+                        <ol id="selectable">
+                            <li class="ui-widget-content">Item 1</li>
+                            <li class="ui-widget-content">Item 2</li>
+                            <li class="ui-widget-content">Item 3</li>
+                            <li class="ui-widget-content">Item 4</li>
+                            <li class="ui-widget-content">Item 5</li>
+                        </ol>
+                    </div>
+                    <label>Lower avg age</label>
+                        <div class="lowest">
+                            <ol id="selectable2">
+                                <li class="ui-widget-content">Item 1</li>
+                                <li class="ui-widget-content">Item 2</li>
+                                <li class="ui-widget-content">Item 3</li>
+                                <li class="ui-widget-content">Item 4</li>
+                                <li class="ui-widget-content">Item 5</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-imagens">
+                    <div class="more">
+                        <h4>Most picked Player</h4>
+                        <div class="more-image">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span>75%</span>
+                        </div>
+                    </div>
 
-            <div class="tasks-container"></div>
-        </div>
+                    <div class="less">
+                        <h4>Less picked Player</h4>
+                        <div class="less-image">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span>25%</span>    
+                        </div>
+                        
+                    </div>
+
+                </div>
+        </article>
     </section>
 
 
     <footer>
         2022 - All rights reserved
     </footer>
-    
 
+    
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/2e6a53fcee.js" crossorigin="anonymous"></script>
-    <script src="./js/scripts.js"></script>
+    <script src="./src/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./src/js/scripts.js"></script>
 </body>
 </html>

@@ -6,7 +6,6 @@ const tasksContainer = document.querySelector('.tasks-container')
 
 const validateInput = () => inputElement.value.trim().length > 0
 
-
 const handleAddTask = () =>{
     const inputValid = validateInput();
 
@@ -119,3 +118,11 @@ refresh();
 addTaskButton.addEventListener("click", () => handleAddTask());
 
 inputElement.addEventListener('change', () => handleInputChange());
+
+$( function() {
+    $( "#selectable" ).selectable();
+  } );
+
+$( function() {
+    $( "#selectable2" ).selectable();
+  } ); 
