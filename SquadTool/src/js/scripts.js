@@ -115,9 +115,9 @@ const refresh = () =>{
 
 refresh();
 
-addTaskButton.addEventListener("click", () => handleAddTask());
+// addTaskButton.addEventListener("click", () => handleAddTask());
 
-inputElement.addEventListener('change', () => handleInputChange());
+// inputElement.addEventListener('change', () => handleInputChange());
 
 $( function() {
     $( "#selectable" ).selectable();
