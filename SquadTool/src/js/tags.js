@@ -1,3 +1,5 @@
+// criação de tags
+
 const tagContainer = document.querySelector('.tag-container');
 const input = document.querySelector('.tag-container input');
 
@@ -34,28 +36,88 @@ function addTags(){
 }
 
 input.addEventListener('keyup', function(e){
-    if(e.key == 'Enter' || e.key == ';'){
-        if(e.key == ';'){
-            tags.push(input.value.slice(0,-1));
-            addTags();
-            input.value = '';
+    if(input.value !=''){
+        if(e.key == 'Enter' || e.key == ';'){
+            if(e.key == ';'){
+                tags.push(input.value.slice(0,-1));
+                addTags();
+                input.value = '';
+            }
+            else{
+                tags.push(input.value);
+                addTags();
+                input.value = '';
+            }
+
+            }
+
+        }
+    })
+
+    // Deletando tags
+
+    document.addEventListener('click', function(e){
+        if(e.target.tagName == 'I'){
+            const value = e.target.getAttribute('data-item');
+            console.log(value);
+            const index = tags.indexOf(value);
+            console.log(index);
+            delete tags[index]
+            console.log(tags);
+            addTags();   
+        }
+    })
+
+    // Validação de campo e salvar na memoria
+
+    const inputElement = document.querySelector('#teamName');
+    const addTaskButton = document.querySelector('.button');
+    
+
+    const validateInput = () => inputElement.value.trim().length > 0
+
+    const handleAddTask = () =>{
+        const inputValid = validateInput();
+    
+        if(!inputValid){
+            return inputElement.classList.add("error");
+        }
+
+        updateLocalStorage();
+
+        alert("team created successfully");
+
+    }
+
+    const handleInputChange = () => {
+        const inputValid = validateInput();
+    
+        if(inputValid){
+            return inputElement.classList.remove("error");
+        }
+    }
+
+    // Salvando em localStorage
+
+    const updateLocalStorage = () =>{
+
+        var tasks = localStorage.getItem("tasks");
+        var content = {description: inputElement.value}
+        
+
+        if(tasks){
+            var json = JSON.parse(tasks);
+            json.push(content);
+            json = JSON.stringify(json);
+            localStorage.setItem("tasks",json);
+            
         }
         else{
-            tags.push(input.value);
-            addTags();
-            input.value = '';
+            localStorage.setItem("tasks",JSON.stringify([content]));
         }
 
-        }
-})
+}
 
-document.addEventListener('click', function(e){
-    if(e.target.tagName == 'I'){
-        const value = closeBtn.getAttribute('data-item');
-        const index = tags.indexOf(value);
-        tags = [...tags.slice(0, index),...tags.slice(index,-1)];
-        addTags();
-        console.log(value);
-        
-    }
-})
+    addTaskButton.addEventListener("click", () => handleAddTask());
+
+    inputElement.addEventListener('change', () => handleInputChange());

@@ -74,6 +74,8 @@ article{
     display: flex;
     width: 100%;
     border-bottom: 1px solid rgb(214, 213, 213);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .new-task-container input{
@@ -81,6 +83,21 @@ article{
     font-size: 1rem;
     border: 2px solid #d1d3d4;
     padding: 5px;
+    font-weight: 400;
+    color: rgb(139,31,111);
+}
+
+.new-task-container h1{
+
+    color: rgb(139, 31, 111);
+    font-size: 33px;
+    padding-left: 20px;
+
+}
+
+a{
+    text-decoration: none;
+    color: #FFF;
     font-weight: 400;
 }
 
@@ -92,12 +109,15 @@ article{
     color: #FFF;
     background-color: rgb(139,31,111);
     font-size: 1.6rem;
-    padding: 12px;
+    padding: 12px 24px;
     margin-left: 12px;
     margin-right: 12px;
     cursor: pointer;
     border: none;
+    text-decoration: none;
 }
+
+
 
 .new-task-container input:focus{
     outline: none;
@@ -237,6 +257,7 @@ footer{
     border: none;
     min-width: 296px;
     padding: 10px 0;
+    cursor: pointer;
 }
 
 .section-header{
@@ -424,6 +445,7 @@ textarea {
     padding: 3px;
     padding-left: 5px;
     font-size: 15px;
+    cursor: default;
 }
 
 .tag i{
